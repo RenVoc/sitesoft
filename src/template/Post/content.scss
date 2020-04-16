@@ -1,0 +1,62 @@
+@import "../../css/partials/helpers.scss";
+
+.content{
+  &__text{
+    width:calc(100% - 380px);
+    .user__inform{
+      justify-content: flex-start;
+      align-items: center;
+      &__avatar{
+        margin-right: 8px;
+      }
+      &__wrapper{
+        p, .style__gray{
+          margin: 0;
+        }
+      }
+    }
+  }
+  &__panel{
+    width: 350px;
+    .panel__faq{
+      margin: 30px 0;
+      border: 1px solid $light-gray;
+        &__item{
+          padding: 20px;
+          border-bottom: 1px solid $light-gray;
+          &__link{
+            padding-right: 20px;
+            position: relative;
+            &:before{
+              content:'';
+              position: absolute;
+              top: 50%;
+              right: 0;
+              background: url(../../images/arrow.png) no-repeat;
+              width: 12px;
+              height: 8px;
+              margin-top: -4px;
+              transform: rotate(180deg);
+            }
+          }
+          &:last-child{
+            border:none;
+          }
+          &.panel__faq__item_active{
+            .panel__faq__item__link{
+              &:before{
+                transform: rotate(0);
+              }
+            }
+            .panel__faq__description{
+              display: block;
+            }
+          }
+          .panel__faq__description{
+            display: none;
+            margin: 8px 0;
+          }
+        }
+    }
+  }
+}

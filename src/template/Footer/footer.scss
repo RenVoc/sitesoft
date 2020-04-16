@@ -1,0 +1,60 @@
+@import "../../css/partials/helpers.scss";
+
+.main__footer{
+  padding: 60px 0;
+  border-top:1px solid $light-gray;
+  margin-top: 50px;
+  .footer__logo{
+    margin-right: 50px;
+  }
+  .footer__links{
+    min-width: 160px;
+    margin: 0 30px;
+    a{
+      display: block;
+    }
+  }
+
+  .footer__information{
+    .clink{
+      color: $main-font-color;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 24px;
+      padding-left: 32px;
+      position: relative;
+      display: block;
+      font-style: normal;
+      margin: 8px 0;
+      &:before{
+        content:'';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 0;
+        top: 0;
+      }
+      &_geo{
+        &:before{
+          background-image: url('../../images/icons/geo.png');
+          background-position: 50%;
+          background-repeat: no-repeat;
+        }
+      }
+      &_phone{
+        &:before{
+          background-image: url('../../images/icons/phone.png');
+          background-position: 50%;
+          background-repeat: no-repeat;
+        }
+      }
+      &_mail{
+        &:before{
+          background-image: url('../../images/icons/mail.png');
+          background-position: 50%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}

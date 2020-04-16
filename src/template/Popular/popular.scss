@@ -1,0 +1,41 @@
+@import "../../css/partials/helpers.scss";
+
+.tabs__container{
+  .tabs__header{
+    border-bottom:1px solid $light-gray;
+    padding: 7px 0;
+    .tabs__btn{
+      display: flex;
+      margin-top: 4px;
+      &__item{
+        &:before{
+          content:'';
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: $error-color;
+          display: none;
+        }
+        &_active,
+        &:hover{
+          &:before{
+            display: block;
+          }
+        }
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__content{
+    .flex-cards{
+      display: none;
+      &_active{
+        display: flex;
+      }
+    }
+  }
+}

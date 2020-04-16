@@ -1,0 +1,42 @@
+@import "../../css/partials/helpers.scss";
+
+.header__top{
+  padding: 30px 0;
+  .header__wrap{
+    .header__lang{
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 24px;
+      margin: 0 60px;
+      .lang_name{
+        position: relative;
+        margin-right: 10px;
+        &:before{
+          content:'';
+          position: absolute;
+          top: 50%;
+          margin-top: -2px;
+          right: -20px;
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid $main-font-color;
+        }
+      }
+      .dropdown{
+        display: none;
+      }
+    }
+  }
+}
+
+.header{
+  background: url('../../images/bg_first.jpg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  &__content{
+    margin: 100px 0 0;
+  }
+}

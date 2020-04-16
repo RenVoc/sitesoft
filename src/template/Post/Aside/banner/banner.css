@@ -1,0 +1,19 @@
+/*Colors*/
+.banner__time {
+  color: #f5f5fa;
+  font-family: Montserrat,sans-serif;
+  font-size: 12px; }
+.banner .banner__image {
+  padding: 25px;
+  background-position: 50%;
+  background-size: cover;
+  min-height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
+  .banner .banner__image p {
+    color: #fff;
+    font-weight: 600;
+    margin: 0; }
+
+/*# sourceMappingURL=banner.css.map */

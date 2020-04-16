@@ -1,0 +1,83 @@
+@import "../../css/partials/helpers.scss";
+
+.form__wrapper{
+  max-width: 350px;
+  width:100%;
+  margin:0 auto;
+  .label__wrapper{
+    position: relative;
+    margin: 15px 0;
+    display: block;
+    .form__placeholder{
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 24px;
+      color:$gray-color;
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      transition: all .2s ease-in;
+    }
+    input:not([type='checkbox']){
+      border: 1px solid $light-gray;
+      padding: 15px 15px 6px;
+      color: $main-font-color;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 24px;
+      &:focus{
+        ~.form__placeholder{
+          top: 6px;
+          font-size: 10px;
+          line-height: 12px;
+          letter-spacing: 0.16px;
+          transition: all .2s ease-in;
+        }
+      }
+    }
+  }
+  button{
+    width: 100%;
+  }
+}
+
+input[type="checkbox"]{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.customCheckbox__item {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border:1px solid $error-color;
+}
+
+input:checked ~ .customCheckbox__item {
+  background: url('../../images/checkbox/icons/checked/checked.png');
+}
+
+.customCheckbox__item:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.customCheckbox{
+  padding-left: 30px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px;
+}

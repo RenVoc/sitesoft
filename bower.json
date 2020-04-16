@@ -1,0 +1,19 @@
+{
+  "name": "wrike",
+  "version": "0.0.0",
+  "authors": [
+    "Ivan Olovyannikov"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*"
+  }
+}

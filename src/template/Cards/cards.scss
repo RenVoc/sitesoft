@@ -1,0 +1,17 @@
+@import "../../css/partials/helpers.scss";
+
+.flex-cards{
+  margin: 20px 0;
+  &__item{
+    width: calc(100% / 3 - 30px);
+    p{
+      margin: 8px 0;
+    }
+    .cards__item__img {
+      img{
+        box-shadow: $box-shadow;
+        border-radius:2px;
+      }
+    }
+  }
+}

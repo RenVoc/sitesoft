@@ -1,0 +1,23 @@
+@import "../../../../css/partials/helpers.scss";
+
+.banner{
+  &__time{
+    color: $gray-f5;
+    font-family: Montserrat,sans-serif;
+    font-size: 12px;
+  }
+  .banner__image{
+    padding: 25px;
+    background-position: 50%;
+    background-size: cover;
+    min-height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    p{
+      color: $white-color;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+}
