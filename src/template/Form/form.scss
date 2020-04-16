@@ -8,6 +8,17 @@
     position: relative;
     margin: 15px 0;
     display: block;
+    &.label__wrapper_alert{
+      .form__placeholder{
+        top: 6px;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 0.16px;
+      }
+      input:not([type='checkbox']){
+        border-color:$error-color;
+      }
+    }
     .form__placeholder{
       font-size: 12px;
       font-weight: 600;
@@ -19,12 +30,6 @@
       transition: all .2s ease-in;
     }
     input:not([type='checkbox']){
-      border: 1px solid $light-gray;
-      padding: 15px 15px 6px;
-      color: $main-font-color;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 24px;
       &:focus{
         ~.form__placeholder{
           top: 6px;
