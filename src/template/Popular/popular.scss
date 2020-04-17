@@ -31,7 +31,7 @@
     }
   }
   &__content{
-    .flex-cards{
+    .tab__contain{
       display: none;
       &_active{
         display: flex;

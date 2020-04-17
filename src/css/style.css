@@ -278,9 +278,9 @@ input:checked ~ .customCheckbox__item {
       display: block; }
     .tabs__container .tabs__header .tabs__btn__item:hover {
       text-decoration: none; }
-.tabs__container__content .flex-cards {
+.tabs__container__content .tab__contain {
   display: none; }
-  .tabs__container__content .flex-cards_active {
+  .tabs__container__content .tab__contain_active {
     display: flex; }
 
 /*Colors*/
@@ -338,6 +338,13 @@ input:checked ~ .customCheckbox__item {
       color: #fff; }
       .slider__wrapper__item .slider__content time {
         color: #e1e2eb; }
+
+.owl-stage-outer {
+  height: 100%; }
+  .owl-stage-outer .owl-stage {
+    height: 100%; }
+    .owl-stage-outer .owl-stage .owl-item {
+      height: 100%; }
 
 html, body {
   height: 100%;

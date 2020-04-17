@@ -14,3 +14,13 @@
     }
   }
 }
+
+.owl-stage-outer{
+  height: 100%;
+  .owl-stage{
+    height: 100%;
+    .owl-item{
+      height: 100%;
+    }
+  }
+}

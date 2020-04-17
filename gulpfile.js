@@ -18,7 +18,9 @@ var path = {
     build: {
         html: 'build/',
         js: 'build/js/',
+        jsLibs: 'build/js/libs',
         css: 'build/css/',
+        cssLibs: 'build/css/libs',
         img: 'build/images/',
         svg: 'build/images/svg',
         fonts: 'build/fonts/'
@@ -26,7 +28,9 @@ var path = {
     src: {
         html: 'src/*.html',
         js: 'src/js/*.js',
+        jsLibs: 'src/js/libs/*.js',
         style: 'src/css/style.scss',
+        styleLibs: 'src/css/css.libs.css',
         img: 'src/images/**/*.*',
         svg: 'src/images/svg/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -64,6 +68,12 @@ gulp.task('js:build', function () {
         .pipe(reload({stream: true})); //И перезагрузим сервер
 });
 
+gulp.task('jsLibs', function () {
+    return   gulp.src(path.src.jsLibs) //Найдем наш main файл
+        .pipe(gulp.dest(path.build.jsLibs)) //Выплюнем готовый файл в build
+        .pipe(reload({stream: true})); //И перезагрузим сервер
+});
+
 gulp.task('style:build', function () {
     return gulp.src(path.src.style)
         .pipe(sass())
@@ -71,6 +81,13 @@ gulp.task('style:build', function () {
         .pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest(path.build.css))
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('styleLibs', function () {
+    return gulp.src(path.src.styleLibs)
+        .pipe(cssmin())
+        .pipe(gulp.dest(path.build.cssLibs))
         .pipe(reload({stream: true}));
 });
 
@@ -116,9 +133,11 @@ gulp.task('svgSprite', function () {
 
 gulp.task('build',
     gulp.parallel('html:build',
+        'styleLibs',
         'style:build',
         'pug',
         'js:build',
+        'jsLibs',
         'image:build',
         'svgSprite'));
 
@@ -151,4 +170,4 @@ gulp.task('webserver', function () {
 });
 
 
-gulp.task('default', gulp.series('build', 'webserver', 'watch', 'style:build', 'pug', 'js:build', 'image:build', 'svgSprite'));
+gulp.task('default', gulp.series('build',  'styleLibs', 'webserver', 'watch', 'style:build', 'pug', 'js:build', 'jsLibs', 'image:build', 'svgSprite'));
