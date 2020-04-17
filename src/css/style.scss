@@ -103,6 +103,9 @@ section{
   position: relative;
   border:none;
   display: inline-block;
+  &:hover{
+    text-decoration: none;
+  }
   &.btn__ics{
     padding: 10px 30px 10px 22px;
     color:$main-font-color;

@@ -6,9 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
-		<link href="css/libs/nice-select.css" type="text/css" rel="stylesheet">
-		<link href="css/libs/owl.carousel.css" type="text/css" rel="stylesheet">
-		<link href="css/libs/owl.theme.default.css" type="text/css" rel="stylesheet">
+		<link href="css/libs/css.libs.css" type="text/css" rel="stylesheet">
 		<link href="css/style.css" type="text/css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="js/libs/owl.carousel.js" type="text/javascript"></script>
@@ -169,15 +167,6 @@
 							</div>
 						</div>
 					</div>
-					<script>$(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
-        nav: true,
-        dots: false,
-        items: 1,
-        loop: true
-    });
-});
-					</script>
 				</section>
 				<div class="centerWrap">
 					<div class="content flex__container flex__container_row">
@@ -213,10 +202,11 @@
 								customers into action, and at the same time it needs to actively express you, what you’re about
 								and your uniqueness.
 							</p>
-							<p>
-								Once you’re sure of your brand you also gain a tangible and easy way of talking to people about what you
-								do. It makes it so much easier to do your marketing when you have it clear in your mind what it is you’re
-								selling in the first place. When you’re creating your brand you are creating a memorable marketing message
+							<p>Once you’re sure of your brand you also gain a tangible and easy way of talking to people about
+								<mark>
+									what you do. It makes it so much easier to do your marketing when you have it clear in your mind what it is you’re
+									selling in the first place.
+								</mark>When you’re creating your brand you are creating a memorable marketing message
 								that will inspire people to take action and choose you over your competitors.
 							</p>
 							<div class="button__wrapper"><a class="btn btn__ics" href="#"><i class="icon__btn"><img src="../../images/loader.png" alt=""></i>Load more</a></div>
@@ -278,18 +268,18 @@
 						<div class="form_wrapper">
 							<h1 class="center">Choosing The Best Audio Player<br>Software For Your Computer</h1>
 							<p class="center">If you having trouble about creating a good 4 color poster print, a 4 color printing company that<br>has 4 color poster printing service may be able to help you made your poster.</p>
-							<form class="form__wrapper" action="">
+							<form class="form__wrapper" action="" id="main__form">
 								<label class="label__wrapper" for="">
-									<input type="text"><span class="form__placeholder">First name</span>
+									<input type="text" name="fName"><span class="form__placeholder">First name</span>
 								</label>
 								<label class="label__wrapper" for="">
-									<input type="text"><span class="form__placeholder">Last name</span>
-								</label>
-								<label class="label__wrapper label__wrapper_alert" for="">
-									<input type="email" value="123asd"><span class="form__placeholder">Email</span>
+									<input type="text" name="lName"><span class="form__placeholder">Last name</span>
 								</label>
 								<label class="label__wrapper" for="">
-									<input type="text"><span class="form__placeholder">Address</span>
+									<input type="email" name="Email"><span class="form__placeholder">Email</span>
+								</label>
+								<label class="label__wrapper" for="">
+									<input type="text" name="address"><span class="form__placeholder">Address</span>
 								</label>
 								<label class="label__wrapper" for="confirm"><span class="customCheckbox">I confirm and agree to the processing of my data and information about myself
 										<input type="checkbox" id="confirm"><span class="customCheckbox__item"></span></span></label>
@@ -301,10 +291,6 @@
 										<option value="Japen">Japen</option>
 									</select>
 								</label>
-								<script>$(document).ready(function() {
-    $('.select2').niceSelect();
-});
-								</script>
 								<div class="button__wrapper">
 									<button class="btn">Send report</button>
 								</div>

@@ -4,18 +4,18 @@
 		<div class="form_wrapper">
 			<h1 class="center">Choosing The Best Audio Player<br/>Software For Your Computer</h1>
 			<p class="center">If you having trouble about creating a good 4 color poster print, a 4 color printing company that<br/>has 4 color poster printing service may be able to help you made your poster.</p>
-			<form class="form__wrapper" action="">
+			<form class="form__wrapper" action="" id="main__form">
 				<label class="label__wrapper" for="">
-					<input type="text"/><span class="form__placeholder">First name</span>
+					<input type="text" name="fName"/><span class="form__placeholder">First name</span>
 				</label>
 				<label class="label__wrapper" for="">
-					<input type="text"/><span class="form__placeholder">Last name</span>
-				</label>
-				<label class="label__wrapper label__wrapper_alert" for="">
-					<input type="email" value="123asd"/><span class="form__placeholder">Email</span>
+					<input type="text" name="lName"/><span class="form__placeholder">Last name</span>
 				</label>
 				<label class="label__wrapper" for="">
-					<input type="text"/><span class="form__placeholder">Address</span>
+					<input type="email" name="Email"/><span class="form__placeholder">Email</span>
+				</label>
+				<label class="label__wrapper" for="">
+					<input type="text" name="address"/><span class="form__placeholder">Address</span>
 				</label>
 				<label class="label__wrapper" for="confirm"><span class="customCheckbox">I confirm and agree to the processing of my data and information about myself
 						<input type="checkbox" id="confirm"/><span class="customCheckbox__item"></span></span></label>
@@ -27,10 +27,6 @@
 						<option value="Japen">Japen</option>
 					</select>
 				</label>
-				<script>$(document).ready(function() {
-    $('.select2').niceSelect();
-});
-				</script>
 				<div class="button__wrapper">
 					<button class="btn">Send report</button>
 				</div>

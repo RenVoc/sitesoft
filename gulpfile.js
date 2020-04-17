@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     svgSprite = require("gulp-svg-sprite"),
     browserSync = require("browser-sync"),
     reload = browserSync.reload,
+    include = require('gulp-include'),
     autoprefixer = require('gulp-autoprefixer');
 
 var path = {
@@ -27,10 +28,10 @@ var path = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/*.js',
+        js: 'src/js/main.js',
         jsLibs: 'src/js/libs/*.js',
         style: 'src/css/style.scss',
-        styleLibs: 'src/css/libs/*.css',
+        styleLibs: 'src/css/css.libs.scss',
         img: 'src/images/**/*.*',
         svg: 'src/images/svg/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -62,8 +63,11 @@ gulp.task('html:build', function () {
         .pipe(reload({stream: true}));
 });
 
+
 gulp.task('js:build', function () {
     return   gulp.src(path.src.js) //Найдем наш main файл
+        .pipe(include())
+        .on('error', console.log)
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(reload({stream: true})); //И перезагрузим сервер
 });

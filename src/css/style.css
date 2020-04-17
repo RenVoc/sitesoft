@@ -97,10 +97,16 @@ a {
   text-decoration: none; }
 
 a:hover {
-  text-decoration: underline; }
+  text-decoration: underline;
+  outline: none; }
 
 a, button {
   outline: none; }
+  a:hover, button:hover {
+    cursor: pointer; }
+
+mark {
+  background: #faf5aa; }
 
 /*Colors*/
 .flex-cards {
@@ -317,7 +323,7 @@ input:checked ~ .customCheckbox__item {
 
 /*Colors*/
 .content__text {
-  width: calc(100% - 380px); }
+  width: calc(100% - 430px); }
   .content__text .user__inform {
     justify-content: flex-start;
     align-items: center; }
@@ -325,6 +331,8 @@ input:checked ~ .customCheckbox__item {
       margin-right: 8px; }
     .content__text .user__inform__wrapper p, .content__text .user__inform__wrapper .style__gray {
       margin: 0; }
+
+/*Colors*/
 .content__panel {
   width: 350px; }
   .content__panel .panel__faq {
@@ -343,7 +351,7 @@ input:checked ~ .customCheckbox__item {
           position: absolute;
           top: 50%;
           right: 0;
-          background: url(../../images/arrow.png) no-repeat;
+          background: url(../../../images/arrow.png) no-repeat;
           width: 12px;
           height: 8px;
           margin-top: -4px;
@@ -358,7 +366,6 @@ input:checked ~ .customCheckbox__item {
         display: none;
         margin: 8px 0; }
 
-/*Colors*/
 /*Colors*/
 .slider__wrapper {
   height: 510px;
@@ -492,6 +499,8 @@ section {
   position: relative;
   border: none;
   display: inline-block; }
+  .btn:hover {
+    text-decoration: none; }
   .btn.btn__ics {
     padding: 10px 30px 10px 22px;
     color: #373b52;

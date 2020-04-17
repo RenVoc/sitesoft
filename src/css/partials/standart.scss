@@ -107,8 +107,16 @@ a{
 
 a:hover{
     text-decoration: underline;
+    outline: none;
 }
 
 a,button{
     outline: none;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+mark{
+    background: $mark;
 }
