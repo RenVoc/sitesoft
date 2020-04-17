@@ -1,13 +1,18 @@
 'use strict';
 
 var gulp = require('gulp'),
+    cleanCSS = require('gulp-clean-css'),
     watch = require('gulp-watch'),
     sass = require('gulp-sass'),
-    fileinclude = require('gulp-file-include'),
+    pug = require('gulp-pug'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
+    cache = require('gulp-cache'),
     cssmin = require('gulp-minify-css'),
     svgSprite = require("gulp-svg-sprite"),
     browserSync = require("browser-sync"),
-    reload = browserSync.reload;
+    reload = browserSync.reload,
+    autoprefixer = require('gulp-autoprefixer');
 
 var path = {
     build: {
@@ -49,20 +54,12 @@ var config = {
 
 gulp.task('html:build', function () {
     return gulp.src(path.src.html)
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file'
-        }))
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('js:build', function () {
     return   gulp.src(path.src.js) //Найдем наш main файл
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file'
-        }))
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(reload({stream: true})); //И перезагрузим сервер
 });
@@ -71,12 +68,32 @@ gulp.task('style:build', function () {
     return gulp.src(path.src.style)
         .pipe(sass())
         .pipe(cssmin())
+        .pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
 
+gulp.task('cleanCSSBuild', () => {
+    return gulp.src(path.build.css)
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest(path.build.css))
+});
+
+gulp.task('pug', function () {
+    return  gulp.src(['./**/*.pug', '!./node_modules/**'])
+        .pipe(pug({pretty: '\t'}))
+        .pipe(gulp.dest('./'))
+});
+
 gulp.task('image:build', function () {
     return  gulp.src(path.src.img) //Выберем наши картинки
+        .pipe(cache(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
         .pipe(gulp.dest(path.build.img)) //И бросим в build
         .pipe(reload({stream: true}));
 });
@@ -96,17 +113,19 @@ gulp.task('svgSprite', function () {
         .pipe(reload({stream: true}));
 });
 
+
 gulp.task('build',
-    gulp.series(['html:build',
+    gulp.parallel('html:build',
         'style:build',
+        'pug',
         'js:build',
         'image:build',
-        'svgSprite']));
+        'svgSprite'));
 
 gulp.task('watch', function(){
     gulp.watch('src/**/*.html').on('change', browserSync.reload);
     browserSync.init({
-        files: gulp.parallel('src/index.html'),
+        files: gulp.parallel('src/index.pug'),
         server:{
             baseDir:'./build',
             directory: true
@@ -132,4 +151,4 @@ gulp.task('webserver', function () {
 });
 
 
-gulp.task('default', gulp.series(['build', 'webserver', 'watch']));
+gulp.task('default', gulp.series('build', 'webserver', 'watch', 'style:build', 'pug', 'js:build', 'image:build', 'svgSprite'));

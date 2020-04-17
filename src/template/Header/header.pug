@@ -1,0 +1,22 @@
+header.header
+    .centerWrap
+        .header__top.flex__container.flex__container_row
+            .header__wrap.flex__container.flex__container_row
+                a(href="/" class="header__logo")
+                    img(src="../../images/logo.png" alt="")
+                .header__lang
+                    .lang_name in English
+                    nav.dropdown
+                        a(href="#" class="dropdown__item") на Русском
+            .header__wrap
+                include header__menu.pug
+        .header__content
+            h1
+                | How I Lost The Secret Of
+                br
+                | Dazzling Success For 20
+                br
+                | Years
+
+            a(href="#" class="btn") Explore now
+            p.style__gray 6 Powerful Tips To Creating Testimonials That Sell Your Products Fast

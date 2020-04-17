@@ -1,0 +1,15 @@
+doctype html
+html(lang="ru")
+    head
+        title="Sitesoft Оловянников"
+        include template/links.pug
+    body
+        main.root-wrapper.flex__container.flex__container_column
+            include template/Header/header.pug
+            section.main-content.flex__container.flex__container_row
+                include template/Cards/cards.pug
+                include template/Popular/popular.pug
+                include template/Slider/slider.pug
+                include template/Post/content.pug
+                include template/Form/form.pug
+            include template/Footer/footer.pug

@@ -304,6 +304,8 @@ input:checked ~ .customCheckbox__item {
       .content__panel .panel__faq__item__link {
         padding-right: 20px;
         position: relative; }
+        .content__panel .panel__faq__item__link:hover {
+          cursor: pointer; }
         .content__panel .panel__faq__item__link:before {
           content: '';
           position: absolute;

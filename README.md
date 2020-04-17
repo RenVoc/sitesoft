@@ -1,10 +1,11 @@
 ## Ivan Olovyannikov
 
 ### Технологии:
-* html5/css3/emmet/SCSS/template
+* html5/css3/emmet
 * jQuery
 * Сборщик gulp
-* Препроцессор scss/sass
+* Препроцессор SCSS/SASS
+* Jade
 * git
 
 ***
