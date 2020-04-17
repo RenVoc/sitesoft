@@ -15,7 +15,6 @@
 @import "../template/Post/Aside/aside";
 @import "../template/Slider/slider";
 @import "../template/Post/Aside/banner/banner.css";
-@import "partials/adaptive.css";
 
 html, body {
   height: 100%;
@@ -26,7 +25,6 @@ html, body {
   font: 16px/24px 'Montserrat', sans-serif;
   font-weight: 400;
   color: $main-font-color;
-  min-width: 1250px;
   background: $white-color;
 }
 
@@ -63,7 +61,7 @@ section{
 
 .centerWrap{
   max-width: 1160px;
-  width: 100%;
+  width: auto;
   padding: 0 10px;
   margin: 0 auto;
 }
@@ -103,8 +101,11 @@ section{
   position: relative;
   border:none;
   display: inline-block;
+  transition: all 0.2s ease-in;
   &:hover{
     text-decoration: none;
+    box-shadow: $box-shadow-hover;
+    transition: all 0.2s ease-out;
   }
   &.btn__ics{
     padding: 10px 30px 10px 22px;
@@ -128,3 +129,5 @@ section{
   margin: 0 30px;
   position: relative;
 }
+
+@import "partials/adaptive.css";

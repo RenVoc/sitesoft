@@ -108,6 +108,9 @@ a, button {
 mark {
   background: #faf5aa; }
 
+img {
+  max-width: 100%; }
+
 /*Colors*/
 .flex-cards {
   margin: 20px 0; }
@@ -435,7 +438,6 @@ html, body {
   font: 16px/24px 'Montserrat', sans-serif;
   font-weight: 400;
   color: #373b52;
-  min-width: 1250px;
   background: #fff; }
 
 .root-wrapper {
@@ -463,7 +465,7 @@ section {
 
 .centerWrap {
   max-width: 1160px;
-  width: 100%;
+  width: auto;
   padding: 0 10px;
   margin: 0 auto; }
 
@@ -498,9 +500,12 @@ section {
   margin: 8px 0;
   position: relative;
   border: none;
-  display: inline-block; }
+  display: inline-block;
+  transition: all 0.2s ease-in; }
   .btn:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    box-shadow: 0 8px 24px -8px rgba(57, 96, 204, 0.8);
+    transition: all 0.2s ease-out; }
   .btn.btn__ics {
     padding: 10px 30px 10px 22px;
     color: #373b52;
