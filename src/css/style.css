@@ -71,7 +71,7 @@ input {
 
 input, select {
   border: 1px solid #e1e2eb;
-  padding: 15px 15px 6px;
+  padding: 16px 15px 6px;
   color: #373b52;
   font-size: 12px;
   font-weight: 600;
@@ -225,6 +225,22 @@ input:checked ~ .customCheckbox__item {
   font-weight: 600;
   line-height: 24px; }
 
+.nice-select {
+  float: none;
+  border: 1px solid #e1e2eb;
+  padding: 8px 30px 8px 15px;
+  color: #9a9eb8;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px; }
+  .nice-select.open {
+    border-color: #9a9eb8; }
+  .nice-select ul.list {
+    width: 100%; }
+    .nice-select ul.list li:before {
+      display: none; }
+
 /*Colors*/
 .header__top {
   padding: 30px 0; }
@@ -232,23 +248,39 @@ input:checked ~ .customCheckbox__item {
     font-size: 12px;
     font-weight: 600;
     line-height: 24px;
-    margin: 0 60px; }
+    margin: 0 60px;
+    position: relative; }
+    .header__top .header__wrap .header__lang:hover {
+      cursor: pointer; }
+      .header__top .header__wrap .header__lang:hover .lang_name:before {
+        transform: rotate(180deg); }
+      .header__top .header__wrap .header__lang:hover .dropdown {
+        display: block; }
     .header__top .header__wrap .header__lang .lang_name {
       position: relative;
-      margin-right: 10px; }
+      padding: 0 30px 0 10px; }
       .header__top .header__wrap .header__lang .lang_name:before {
         content: '';
         position: absolute;
         top: 50%;
         margin-top: -2px;
-        right: -20px;
+        right: 5px;
         width: 0;
         height: 0;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 5px solid #373b52; }
     .header__top .header__wrap .header__lang .dropdown {
-      display: none; }
+      display: none;
+      position: absolute;
+      width: calc(100% - 15px);
+      background: #fff;
+      border-radius: 5px;
+      top: 25px; }
+      .header__top .header__wrap .header__lang .dropdown__item {
+        padding: 3px 5px 5px 10px;
+        display: block;
+        font-size: 11px; }
 
 .header {
   background: url("../../images/bg_first.jpg");
@@ -329,11 +361,13 @@ input:checked ~ .customCheckbox__item {
 /*Colors*/
 /*Colors*/
 .slider__wrapper {
-  height: 510px; }
+  height: 510px;
+  position: relative; }
   .slider__wrapper__item {
     height: 100%;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    background-size: cover !important; }
     .slider__wrapper__item .slider__content {
       color: #fff; }
       .slider__wrapper__item .slider__content time {
@@ -345,6 +379,45 @@ input:checked ~ .customCheckbox__item {
     height: 100%; }
     .owl-stage-outer .owl-stage .owl-item {
       height: 100%; }
+
+.owl-carousel.owl-theme .owl-nav {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto; }
+  .owl-carousel.owl-theme .owl-nav button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    background-color: #fff;
+    position: absolute;
+    top: -35px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    margin: 0;
+    border-radius: 0; }
+    .owl-carousel.owl-theme .owl-nav button span {
+      display: none; }
+    .owl-carousel.owl-theme .owl-nav button:hover {
+      background-color: #e1e2eb;
+      background-position: 50%;
+      background-repeat: no-repeat; }
+      .owl-carousel.owl-theme .owl-nav button:hover.owl-next {
+        background-image: url(../../images/arrow.png);
+        transform: rotate(90deg); }
+      .owl-carousel.owl-theme .owl-nav button:hover.owl-prev {
+        background-image: url(../../images/arrow.png);
+        transform: rotate(-90deg); }
+    .owl-carousel.owl-theme .owl-nav button.owl-next {
+      right: 0;
+      background-image: url(../../images/arrow.png);
+      transform: rotate(90deg); }
+    .owl-carousel.owl-theme .owl-nav button.owl-prev {
+      left: 0;
+      background-image: url(../../images/arrow.png);
+      transform: rotate(-90deg); }
 
 html, body {
   height: 100%;

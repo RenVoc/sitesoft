@@ -17,6 +17,6 @@ $(document).ready(function(){
         $('.panel__faq__item').not(current).removeClass('panel__faq__item_active');
     });
 
-
+    
 
 });

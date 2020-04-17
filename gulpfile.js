@@ -30,7 +30,7 @@ var path = {
         js: 'src/js/*.js',
         jsLibs: 'src/js/libs/*.js',
         style: 'src/css/style.scss',
-        styleLibs: 'src/css/css.libs.css',
+        styleLibs: 'src/css/libs/*.css',
         img: 'src/images/**/*.*',
         svg: 'src/images/svg/**/*.*',
         fonts: 'src/fonts/**/*.*'

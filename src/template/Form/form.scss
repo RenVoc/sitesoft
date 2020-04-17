@@ -86,3 +86,25 @@ input:checked ~ .customCheckbox__item {
   font-weight: 600;
   line-height: 24px;
 }
+
+.nice-select{
+  float: none;
+  border: 1px solid $light-gray;
+  padding: 8px 30px 8px 15px;
+  color: $gray-color;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px;
+  &.open{
+    border-color: $gray-color;
+  }
+  ul.list{
+    width: 100%;
+    li{
+      &:before{
+        display: none;
+      }
+    }
+  }
+}
