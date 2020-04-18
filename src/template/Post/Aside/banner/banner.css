@@ -5,8 +5,8 @@
   font-size: 12px; }
 .banner .banner__image {
   padding: 25px;
-  background-position: 50%;
-  background-size: cover;
+  background-position: 50% !important;
+  background-size: cover !important;
   min-height: 175px;
   display: flex;
   flex-direction: column;

@@ -17,3 +17,26 @@
     }
   }
 }
+
+@media all and (max-width: 1000px){
+  .content .content__panel,
+  .content .content__text{
+    width: 100%;
+  }
+
+  .content__panel{
+    order:1;
+  }
+
+  .content__text{
+    order:2;
+  }
+
+  .user__inform__wrapper{
+    text-align: center;
+  }
+
+  .user__inform{
+    justify-content: center;
+  }
+}

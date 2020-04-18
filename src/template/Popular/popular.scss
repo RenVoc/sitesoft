@@ -6,6 +6,7 @@
     padding: 7px 0;
     .tabs__btn{
       display: flex;
+      justify-content: space-between;
       margin-top: 4px;
       &__item{
         &:before{
@@ -37,5 +38,11 @@
         display: flex;
       }
     }
+  }
+}
+
+@media all and (max-width: 1000px){
+  .tabs__container .tabs__header .tabs__btn{
+    margin-top: 10px;
   }
 }

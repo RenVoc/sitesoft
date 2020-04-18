@@ -9,7 +9,6 @@
 @import "../template/Footer/footer";
 @import "../template/Form/form";
 @import "../template/Header/header";
-@import "../template/Header/menu.css";
 @import "../template/Popular/popular";
 @import "../template/Post/content";
 @import "../template/Post/Aside/aside";
@@ -61,7 +60,7 @@ section{
 
 .centerWrap{
   max-width: 1160px;
-  width: auto;
+  width: 100%;
   padding: 0 10px;
   margin: 0 auto;
 }
@@ -130,4 +129,3 @@ section{
   position: relative;
 }
 
-@import "partials/adaptive.css";

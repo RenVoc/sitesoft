@@ -15,3 +15,12 @@
     }
   }
 }
+
+@media all and (max-width: 1000px){
+  .flex-cards .flex-cards__item{
+    width: 100%;
+    +.flex-cards__item{
+      margin-top: 20px;
+    }
+  }
+}

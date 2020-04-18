@@ -73,3 +73,29 @@
     }
   }
 }
+
+.owl-theme .owl-dots{
+  position: relative;
+  text-align: center;
+  margin-top: -30px;
+  display: none;
+}
+
+@media all and (max-width: 1300px){
+  .owl-theme .owl-dots{
+    display: block;
+  }
+  .owl-nav{
+    display: none;
+  }
+}
+
+@media all and (max-width: 1000px){
+  .slider__wrapper{
+    height: 350px;
+  }
+
+  .slider__wrapper__item .slider__content{
+    text-align: center;
+  }
+}

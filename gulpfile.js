@@ -32,6 +32,7 @@ var path = {
         jsLibs: 'src/js/libs/*.js',
         style: 'src/css/style.scss',
         styleLibs: 'src/css/css.libs.scss',
+        mainMobile: 'src/css/mobile.scss',
         img: 'src/images/**/*.*',
         svg: 'src/images/svg/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -95,6 +96,13 @@ gulp.task('styleLibs', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('mainMobile', function () {
+    return gulp.src(path.src.mainMobile)
+        .pipe(cssmin())
+        .pipe(gulp.dest(path.build.css))
+        .pipe(reload({stream: true}));
+});
+
 gulp.task('cleanCSSBuild', () => {
     return gulp.src(path.build.css)
         .pipe(cleanCSS({compatibility: 'ie8'}))
@@ -143,7 +151,8 @@ gulp.task('build',
         'js:build',
         'jsLibs',
         'image:build',
-        'svgSprite'));
+        'svgSprite',
+        'mainMobile'));
 
 gulp.task('watch', function(){
     gulp.watch('src/**/*.html').on('change', browserSync.reload);
@@ -174,4 +183,4 @@ gulp.task('webserver', function () {
 });
 
 
-gulp.task('default', gulp.series('build',  'styleLibs', 'webserver', 'watch', 'style:build', 'pug', 'js:build', 'jsLibs', 'image:build', 'svgSprite'));
+gulp.task('default', gulp.series('build',  'styleLibs', 'mainMobile', 'webserver', 'watch', 'style:build', 'pug', 'js:build', 'jsLibs', 'image:build', 'svgSprite'));

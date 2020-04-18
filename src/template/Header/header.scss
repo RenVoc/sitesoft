@@ -3,6 +3,7 @@
 .header__top{
   padding: 30px 0;
   .header__wrap{
+    align-items: center;
     .header__lang{
       font-size: 12px;
       font-weight: 600;
@@ -43,6 +44,8 @@
         background: #fff;
         border-radius: 5px;
         top: 25px;
+        z-index: 1;
+        box-shadow: $box-shadow;
         &__item{
           padding: 3px 5px 5px 10px;
           display: block;
@@ -60,5 +63,26 @@
   background-size: cover;
   &__content{
     margin: 100px 0 0;
+  }
+}
+
+@media all and (max-width: 1000px){
+  .header__top{
+    padding: 10px 0;
+    .header__wrap{
+      flex-direction: row !important;
+      width: 100%;
+      .header__lang{
+        margin: 0;
+      }
+      .header__menu{
+        flex-direction: row;
+        margin: 15px 0 5px;
+      }
+    }
+  }
+  .header__content {
+    margin: 20px 0;
+    text-align: center;
   }
 }

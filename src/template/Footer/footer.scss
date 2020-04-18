@@ -58,3 +58,27 @@
     }
   }
 }
+
+@media all and (max-width: 1000px){
+  .footer__menu{
+    flex-direction: row !important;
+  }
+
+  .main__footer {
+    padding: 20px 0;
+    margin-top: 30px;
+    .footer__logo{
+      margin: 0;
+      text-align: center;
+    }
+    .footer__links{
+      margin: 10px 0;
+      min-width: auto;
+      max-width: 45%;
+      .menu__item {
+        margin: 0;
+      }
+    }
+  }
+
+}

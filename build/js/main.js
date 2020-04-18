@@ -47,7 +47,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
         nav: true,
-        dots: false,
+        dots: true,
         items: 1,
         loop: true
     })
