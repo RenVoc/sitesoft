@@ -538,7 +538,8 @@ html, body {
     justify-content: space-between; }
 
 section {
-  width: 100%; }
+  width: 100%;
+  margin: 20px auto; }
 
 .centerWrap {
   max-width: 1160px;

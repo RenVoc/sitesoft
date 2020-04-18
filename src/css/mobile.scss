@@ -6,12 +6,10 @@
 }
 
 @media all and (max-width: 1000px){
-  .root-wrapper{
-    flex-direction: column;
-  }
 
   .flex__container .flex__container_row{
     flex-direction: column;
+    width: 100%;
   }
 
   .centerWrap{

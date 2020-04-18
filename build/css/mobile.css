@@ -5,12 +5,13 @@
   h1, h2 {
     line-height: 32px; }
 
-  .flex__container .flex__container_row, .root-wrapper {
+  .flex__container .flex__container_row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    width: 100%; }
 
   .centerWrap {
     width: auto; }
