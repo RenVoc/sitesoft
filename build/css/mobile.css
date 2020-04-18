@@ -6,6 +6,10 @@
     line-height: 32px; }
 
   .flex__container .flex__container_row, .root-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column; }
 
   .centerWrap {

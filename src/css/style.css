@@ -514,7 +514,8 @@ html, body {
   font: 16px/24px 'Montserrat', sans-serif;
   font-weight: 400;
   color: #373b52;
-  background: #fff; }
+  background: #fff;
+  overflow: auto; }
 
 .root-wrapper {
   width: 100%;

@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    babel = require('gulp-babel'),
     cleanCSS = require('gulp-clean-css'),
     watch = require('gulp-watch'),
     sass = require('gulp-sass'),
@@ -12,6 +13,7 @@ var gulp = require('gulp'),
     svgSprite = require("gulp-svg-sprite"),
     browserSync = require("browser-sync"),
     reload = browserSync.reload,
+    minify = require('gulp-minify'),
     include = require('gulp-include'),
     autoprefixer = require('gulp-autoprefixer');
 
@@ -64,19 +66,20 @@ gulp.task('html:build', function () {
         .pipe(reload({stream: true}));
 });
 
-
 gulp.task('js:build', function () {
-    return   gulp.src(path.src.js) //Найдем наш main файл
+    return   gulp.src(path.src.js)
         .pipe(include())
         .on('error', console.log)
-        .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
-        .pipe(reload({stream: true})); //И перезагрузим сервер
+        .pipe(babel())
+        .pipe(minify())
+        .pipe(gulp.dest(path.build.js))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('jsLibs', function () {
-    return   gulp.src(path.src.jsLibs) //Найдем наш main файл
-        .pipe(gulp.dest(path.build.jsLibs)) //Выплюнем готовый файл в build
-        .pipe(reload({stream: true})); //И перезагрузим сервер
+    return   gulp.src(path.src.jsLibs)
+        .pipe(gulp.dest(path.build.jsLibs))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('style:build', function () {
@@ -84,7 +87,6 @@ gulp.task('style:build', function () {
         .pipe(sass())
         .pipe(cssmin())
         .pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
-        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
@@ -99,6 +101,7 @@ gulp.task('styleLibs', function () {
 gulp.task('mainMobile', function () {
     return gulp.src(path.src.mainMobile)
         .pipe(cssmin())
+        .pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
@@ -116,48 +119,49 @@ gulp.task('pug', function () {
 });
 
 gulp.task('image:build', function () {
-    return  gulp.src(path.src.img) //Выберем наши картинки
+    return  gulp.src(path.src.img)
         .pipe(cache(imagemin({
             interlaced: true,
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         })))
-        .pipe(gulp.dest(path.build.img)) //И бросим в build
+        .pipe(gulp.dest(path.build.img))
         .pipe(reload({stream: true}));
 });
 
 
 gulp.task('svgSprite', function () {
-    return gulp.src(path.src.svg) // svg files for sprite
+    return gulp.src(path.src.svg)
         .pipe(svgSprite({
                 mode: {
                     stack: {
-                        sprite: "../sprite.svg"  //sprite file name
+                        sprite: "../sprite.svg"
                     }
                 },
             }
         ))
-        .pipe(gulp.dest(path.build.svg)) //И бросим в build
+        .pipe(gulp.dest(path.build.svg))
         .pipe(reload({stream: true}));
 });
 
 
 gulp.task('build',
-    gulp.parallel('html:build',
+    gulp.series('html:build',
+        'pug',
         'styleLibs',
         'style:build',
-        'pug',
-        'js:build',
+        'mainMobile',
+        'cleanCSSBuild',
         'jsLibs',
+        'js:build',
         'image:build',
-        'svgSprite',
-        'mainMobile'));
+        'svgSprite'));
 
 gulp.task('watch', function(){
     gulp.watch('src/**/*.html').on('change', browserSync.reload);
     browserSync.init({
-        files: gulp.parallel('src/index.pug'),
+        files: gulp.parallel('src/index.html'),
         server:{
             baseDir:'./build',
             directory: true
@@ -182,5 +186,4 @@ gulp.task('webserver', function () {
     browserSync(config);
 });
 
-
-gulp.task('default', gulp.series('build',  'styleLibs', 'mainMobile', 'webserver', 'watch', 'style:build', 'pug', 'js:build', 'jsLibs', 'image:build', 'svgSprite'));
+gulp.task('default', gulp.series('build', 'pug', 'html:build', 'styleLibs', 'style:build', 'mainMobile', 'webserver', 'watch', 'js:build', 'jsLibs', 'image:build'));
