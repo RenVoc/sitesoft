@@ -3,7 +3,7 @@
 .slider__wrapper{
   height: 510px;
   position: relative;
-  &__item{
+  .slider__item{
     height: 100%;
     display: flex;
     align-items: center;
@@ -95,7 +95,7 @@
     height: 350px;
   }
 
-  .slider__wrapper__item .slider__content{
+  .slider__item .slider__content{
     text-align: center;
   }
 }

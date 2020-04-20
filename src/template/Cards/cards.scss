@@ -7,11 +7,11 @@
     p{
       margin: 8px 0;
     }
-    .cards__item__img {
-      img{
-        box-shadow: $box-shadow;
-        border-radius:2px;
-      }
+  }
+  &__img {
+    img{
+      box-shadow: $box-shadow;
+      border-radius:2px;
     }
   }
 }

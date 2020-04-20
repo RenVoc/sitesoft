@@ -4,7 +4,7 @@
   .tabs__header{
     border-bottom:1px solid $light-gray;
     padding: 7px 0;
-    .tabs__btn{
+    .tabs{
       display: flex;
       justify-content: space-between;
       margin-top: 4px;
@@ -31,8 +31,8 @@
       }
     }
   }
-  &__content{
-    .tab__contain{
+  .tabs__content{
+    .tabs__contain{
       display: none;
       &_active{
         display: flex;

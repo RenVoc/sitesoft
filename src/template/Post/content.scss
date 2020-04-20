@@ -6,10 +6,10 @@
     .user__inform{
       justify-content: flex-start;
       align-items: center;
-      &__avatar{
+      .user__avatar{
         margin-right: 8px;
       }
-      &__wrapper{
+      .user__description{
         p, .style__gray{
           margin: 0;
         }
@@ -19,12 +19,12 @@
 }
 
 @media all and (max-width: 1000px){
-  .content .content__panel,
+  .content .panel,
   .content .content__text{
     width: 100%;
   }
 
-  .content__panel{
+  .panel{
     order:1;
   }
 
@@ -32,11 +32,10 @@
     order:2;
   }
 
-  .user__inform__wrapper{
-    text-align: center;
-  }
-
   .user__inform{
     justify-content: center;
+    .user__description{
+      text-align: center;
+    }
   }
 }
