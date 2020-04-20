@@ -8,9 +8,10 @@
     position: relative;
     margin: 15px 0;
     display: block;
+    z-index: 0;
     &.label__wrapper_alert{
       .form__placeholder{
-        top: 6px;
+        margin-top: -16px;
         font-size: 10px;
         line-height: 12px;
         letter-spacing: 0.16px;
@@ -25,14 +26,18 @@
       line-height: 24px;
       color:$gray-color;
       position: absolute;
-      top: 12px;
+      top: 50%;
+      margin-top: -12px;
       left: 15px;
       transition: all .2s ease-in;
+      z-index: -1;
     }
     input:not([type='checkbox']){
+      z-index: 1;
+      background: transparent;
       &:focus{
         ~.form__placeholder{
-          top: 6px;
+          margin-top: -16px;
           font-size: 10px;
           line-height: 12px;
           letter-spacing: 0.16px;

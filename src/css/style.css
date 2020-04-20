@@ -191,9 +191,10 @@ img {
   .form__wrapper .label__wrapper {
     position: relative;
     margin: 15px 0;
-    display: block; }
+    display: block;
+    z-index: 0; }
     .form__wrapper .label__wrapper.label__wrapper_alert .form__placeholder {
-      top: 6px;
+      margin-top: -16px;
       font-size: 10px;
       line-height: 12px;
       letter-spacing: 0.16px; }
@@ -205,15 +206,20 @@ img {
       line-height: 24px;
       color: #9a9eb8;
       position: absolute;
-      top: 12px;
+      top: 50%;
+      margin-top: -12px;
       left: 15px;
-      transition: all .2s ease-in; }
-    .form__wrapper .label__wrapper input:not([type='checkbox']):focus ~ .form__placeholder {
-      top: 6px;
-      font-size: 10px;
-      line-height: 12px;
-      letter-spacing: 0.16px;
-      transition: all .2s ease-in; }
+      transition: all .2s ease-in;
+      z-index: -1; }
+    .form__wrapper .label__wrapper input:not([type='checkbox']) {
+      z-index: 1;
+      background: transparent; }
+      .form__wrapper .label__wrapper input:not([type='checkbox']):focus ~ .form__placeholder {
+        margin-top: -16px;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 0.16px;
+        transition: all .2s ease-in; }
   .form__wrapper button {
     width: 100%; }
 
