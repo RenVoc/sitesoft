@@ -126,18 +126,18 @@ img {
     .flex-cards .flex-cards__item + .flex-cards__item {
       margin-top: 20px; } }
 /*Colors*/
-.main__footer {
+.main-footer {
   padding: 60px 0;
   border-top: 1px solid #e1e2eb;
   margin-top: 50px; }
-  .main__footer .footer__logo {
+  .main-footer__logo {
     margin-right: 50px; }
-  .main__footer .footer__links {
+  .main-footer__links {
     min-width: 160px;
     margin: 0 30px; }
-    .main__footer .footer__links a {
+    .main-footer__links a {
       display: block; }
-  .main__footer .footer__information .clink {
+  .main-footer__information .clink {
     color: #373b52;
     font-size: 12px;
     font-weight: 600;
@@ -147,41 +147,41 @@ img {
     display: block;
     font-style: normal;
     margin: 8px 0; }
-    .main__footer .footer__information .clink:before {
+    .main-footer__information .clink:before {
       content: '';
       position: absolute;
       width: 24px;
       height: 24px;
       left: 0;
       top: 0; }
-    .main__footer .footer__information .clink_geo:before {
+    .main-footer__information .clink_geo:before {
       background-image: url("../../images/icons/geo.png");
       background-position: 50%;
       background-repeat: no-repeat; }
-    .main__footer .footer__information .clink_phone:before {
+    .main-footer__information .clink_phone:before {
       background-image: url("../../images/icons/phone.png");
       background-position: 50%;
       background-repeat: no-repeat; }
-    .main__footer .footer__information .clink_mail:before {
+    .main-footer__information .clink_mail:before {
       background-image: url("../../images/icons/mail.png");
       background-position: 50%;
       background-repeat: no-repeat; }
 
 @media all and (max-width: 1000px) {
-  .footer__menu {
+  .main-footer__menu {
     flex-direction: row !important; }
 
-  .main__footer {
+  .main-footer {
     padding: 20px 0;
     margin-top: 30px; }
-    .main__footer .footer__logo {
+    .main-footer__logo {
       margin: 0;
       text-align: center; }
-    .main__footer .footer__links {
+    .main-footer__links {
       margin: 10px 0;
       min-width: auto;
       max-width: 45%; }
-      .main__footer .footer__links .menu__item {
+      .main-footer__links .menu__item {
         margin: 0; } }
 /*Colors*/
 .form__wrapper {
