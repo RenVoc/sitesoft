@@ -111,7 +111,10 @@ img {
 
 /*Colors*/
 .flex-cards {
-  margin: 20px 0; }
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
   .flex-cards__item {
     width: calc(100% / 3 - 30px); }
     .flex-cards__item p {
@@ -167,9 +170,14 @@ img {
       background-position: 50%;
       background-repeat: no-repeat; }
 
+.main-footer__menu {
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start; }
+
 @media all and (max-width: 1000px) {
   .main-footer__menu {
-    flex-direction: row !important; }
+    flex-direction: row; }
 
   .main-footer {
     padding: 20px 0;
@@ -355,7 +363,11 @@ input:checked ~ .customCheckbox__item {
 /*Colors*/
 .tabs__header {
   border-bottom: 1px solid #e1e2eb;
-  padding: 7px 0; }
+  padding: 7px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap; }
 
 .tabs {
   display: flex;
@@ -378,7 +390,10 @@ input:checked ~ .customCheckbox__item {
 .tabs__content .tabs__contain {
   display: none; }
   .tabs__content .tabs__contain_active {
-    display: flex; }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap; }
 
 @media all and (max-width: 1000px) {
   .tabs__container .tabs__header .tabs__btn {
@@ -386,7 +401,10 @@ input:checked ~ .customCheckbox__item {
 /*Colors*/
 .content__text {
   width: calc(100% - 430px); }
-.content .user__inform {
+
+.user__inform {
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center; }
 

@@ -2,6 +2,9 @@
 
 .flex-cards{
   margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   &__item{
     width: calc(100% / 3 - 30px);
     p{

@@ -59,9 +59,15 @@
   }
 }
 
+.main-footer__menu{
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+}
+
 @media all and (max-width: 1000px){
   .main-footer__menu{
-    flex-direction: row !important;
+    flex-direction: row;
   }
 
   .main-footer {

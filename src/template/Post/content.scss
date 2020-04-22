@@ -4,13 +4,14 @@
   &__text{
     width:calc(100% - 430px);
   }
-
-  .user__inform{
-    justify-content: flex-start;
-    align-items: center;
-  }
 }
 
+.user__inform{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 .user__avatar{
   margin-right: 8px;

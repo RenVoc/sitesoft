@@ -3,6 +3,10 @@
 .tabs__header{
   border-bottom:1px solid $light-gray;
   padding: 7px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 
@@ -38,6 +42,9 @@
     display: none;
     &_active{
       display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 }
