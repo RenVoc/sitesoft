@@ -386,8 +386,7 @@ input:checked ~ .customCheckbox__item {
 /*Colors*/
 .content__text {
   width: calc(100% - 430px); }
-
-.user__inform {
+.content .user__inform {
   justify-content: flex-start;
   align-items: center; }
 
