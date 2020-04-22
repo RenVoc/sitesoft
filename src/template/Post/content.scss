@@ -3,18 +3,21 @@
 .content{
   &__text{
     width:calc(100% - 430px);
-    .user__inform{
-      justify-content: flex-start;
-      align-items: center;
-      .user__avatar{
-        margin-right: 8px;
-      }
-      .user__description{
-        p, .style__gray{
-          margin: 0;
-        }
-      }
-    }
+  }
+}
+
+.user__inform{
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user__avatar{
+  margin-right: 8px;
+}
+
+.user__description{
+  p, .style__gray{
+    margin: 0;
   }
 }
 
@@ -34,8 +37,10 @@
 
   .user__inform{
     justify-content: center;
-    .user__description{
-      text-align: center;
-    }
+  }
+
+
+  .user__description{
+    text-align: center;
   }
 }

@@ -1,12 +1,12 @@
 @media all and (max-width: 1300px) {
-  .centerWrap {
+  .center-wrap {
     max-width: 980px; } }
 @media all and (max-width: 1000px) {
   .flex__container .flex__container_row {
     flex-direction: column;
     width: 100%; }
 
-  .centerWrap {
+  .center-wrap {
     width: auto; }
 
   .menu__item {

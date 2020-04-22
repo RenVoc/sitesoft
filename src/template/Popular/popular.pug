@@ -4,7 +4,7 @@
     {time: "08 Mar 2018",title: "Make Money Online Through Advertising",description: "Conversations can be a tricky business. Sometimes, decoding what is said with what is meant is difficult at best."}];
 
 section
-    .centerWrap
+    .center-wrap
         .content
             .tabs__container
                 header(class="tabs__header flex__container flex__container_row")
@@ -14,19 +14,19 @@ section
                         a(href="#" class="tabs__item menu__item" data-tab="2") This week
                         a(href="#" class="tabs__item menu__item" data-tab="3") Month
                 section(class="tabs__content")
-                    section(class="flex-cards tabs__contain flex__container flex__container_row tabs__contain_active"  data-tab="1")
+                    div(class="flex-cards tabs__contain flex__container flex__container_row tabs__contain_active"  data-tab="1")
                         for i in cardInfo
                             .flex-cards__item
                                 time(class="style__gray")=i.time
                                 h4=i.title
                                 p=i.description
-                    section(class="flex-cards tabs__contain flex__container flex__container_row"  data-tab="2")
+                    div(class="flex-cards tabs__contain flex__container flex__container_row"  data-tab="2")
                         for i in cardInfo
                             .flex-cards__item
                                 time(class="style__gray")=i.time
                                 h4=i.title
                                 p=i.description
-                    section(class="flex-cards tabs__contain flex__container flex__container_row" data-tab="3")
+                    div(class="flex-cards tabs__contain flex__container flex__container_row" data-tab="3")
                         for i in cardInfo
                             .flex-cards__item
                                 time(class="style__gray")=i.time

@@ -3,17 +3,19 @@
 .slider__wrapper{
   height: 510px;
   position: relative;
-  .slider__item{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    background-size: cover !important;
-    .slider__content{
-      color: $white-color;
-      time{
-        color: $light-gray;
-      }
-    }
+}
+
+.slider__item{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-size: cover !important;
+}
+
+.slider__content{
+  color: $white-color;
+  time{
+    color: $light-gray;
   }
 }
 
